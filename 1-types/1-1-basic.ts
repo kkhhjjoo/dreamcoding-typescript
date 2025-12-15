@@ -24,6 +24,35 @@
   //null
   let person: null; //💩
   let person2: string | null;
+
+  //unknown💩
+  let notSure: unknown = 0;
+  notSure = 'he';
+  notSure = true;
+
+  //any💩
+  let anything: any = 0;
+  anything = 'hello';
+
+  //void
+  function print(): void { 
+    console.log('hello');
+    return;
+  }
+  let unusable: void = undefined; //💩
+
+  //never
+  function throwError(message: string): never {
+    throw new Error(message);
+    while (true) {}
+  }
+  let neverEnding: never; //💩
+
+  //object
+  let obj: object; //💩
+  function acceptSomeObject(obj: object) {
+  }
+  acceptSomeObject({ name: 'hyunjoo' });
+  acceptSomeObject({ animal: 'dog' });
 }
 
-console.log('hello');
